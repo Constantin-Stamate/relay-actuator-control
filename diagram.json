@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "author": "Constantin Stamate",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-mega",
+      "id": "mega",
+      "top": 80,
+      "left": 250,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -20,
+      "left": 520,
+      "attrs": {
+        "pins": "full"
+      }
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay",
+      "top": 310,
+      "left": 620,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 300,
+      "left": 430,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "resistor",
+      "top": 350,
+      "left": 430,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    ["mega:12", "lcd:RS", "green", []],
+    ["mega:11", "lcd:E", "green", []],
+    ["mega:5", "lcd:D4", "green", []],
+    ["mega:4", "lcd:D5", "green", []],
+    ["mega:3", "lcd:D6", "green", []],
+    ["mega:2", "lcd:D7", "green", []],
+    ["mega:GND.1", "lcd:VSS", "black", []],
+    ["mega:5V", "lcd:VDD", "red", []],
+    ["mega:GND.2", "lcd:RW", "black", []],
+    ["mega:GND.3", "lcd:V0", "black", []],
+    ["mega:8", "relay:IN", "blue", []],
+    ["mega:5V", "relay:VCC", "red", []],
+    ["mega:GND.4", "relay:GND", "black", []],
+    ["mega:9", "resistor:1", "blue", []],
+    ["resistor:2", "led:A", "blue", []],
+    ["led:C", "mega:GND.5", "black", []]
+  ],
+  "dependencies": {},
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  }
+}
